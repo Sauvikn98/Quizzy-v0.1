@@ -12,6 +12,8 @@ const Tab = createBottomTabNavigator();
 
 const AuthStack = createNativeStackNavigator()
 
+const ProfileStack = createNativeStackNavigator()
+
 const MyTheme = {
   ...DefaultTheme,
   colors: {
