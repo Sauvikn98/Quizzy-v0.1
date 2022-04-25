@@ -20,7 +20,6 @@ const HomeScreen = (props) => {
   }, []);
 
     useEffect(() => {
-      console.log('hello')
         props.getPosts()
     }, [])
 
@@ -38,7 +37,6 @@ const HomeScreen = (props) => {
                     return (<PostCard post={post} key={post.id}/>);
                 })
             }
-            {/* <Button onPress={props.logoutUser} title="Logout"/>  */}
         </ScrollView>
     )
 }

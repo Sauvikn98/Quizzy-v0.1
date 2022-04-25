@@ -1,15 +1,23 @@
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, Image, TouchableOpacity, Alert } from 'react-native'
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/FontAwesome';
 import Icons from 'react-native-vector-icons/AntDesign';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import { deletePosts} from '../redux/actions/PostActions';
+import { deletePosts, getPosts} from '../redux/actions/PostActions';
 
-const ProfilePostCard = ({ post, deletePosts }) => {
+const ProfilePostCard = ({ post, deletePosts, getPosts }) => {
     const handleDelete = ()=> {
-        console.log('delete')
-        deletePosts(post)
+        deletePosts(post);
+        Alert.alert(
+            "Message",
+            "Quiz has been deleted sucessfully!!",
+            [
+              { text: "OK", onPress: () => getPosts() }
+            ]
+          );
+            
+
     }
     return (
         <View style={styles.postCard}>
@@ -44,6 +52,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = dispatch => (
     bindActionCreators({
         deletePosts,
+        getPosts
     }, dispatch)
 );
 

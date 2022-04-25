@@ -1,11 +1,10 @@
-import { View, Text, Button, StyleSheet, TextInput , TouchableOpacity} from 'react-native'
+import { View, Text, StyleSheet, TextInput , TouchableOpacity} from 'react-native'
 import React, {useEffect, useState} from 'react'
 import { connect } from 'react-redux';
 import {bindActionCreators} from 'redux'
 
 import {addPost} from '../../redux/actions/PostActions' 
 import {Picker} from '@react-native-picker/picker'
-import { async } from '@firebase/util';
 const PostScreen = (props) => {
 
   const [greet, setGreet] = useState("")
@@ -72,7 +71,7 @@ const PostScreen = (props) => {
           {
             props.post.loading && (
             <View>
-              <Text style={{fontFamily:'OpenSans-Regular'}}>Posting... Please wait</Text>
+              <Text style={{fontFamily:'OpenSans-Regular', color: '#333'}}>Posting... Please wait</Text>
             </View>
             )
           }

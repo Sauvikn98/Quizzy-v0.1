@@ -30,10 +30,12 @@ const PostCard = ({post}) => {
     }
   return (
     <View style={styles.postCard}>
-      <View style={styles.postHeader}>
+        <TouchableOpacity>
+        <View style={styles.postHeader}>
         <Icon name="user" color={'#5350d2'} size={30} />
         <Text style={styles.userName}>{post.AuthorName}</Text>
       </View>
+        </TouchableOpacity>
       <View style={styles.postBody}>
         <Text style={styles.question}>{post.Question}</Text>
         {post.Options.map((op, i)=> (
